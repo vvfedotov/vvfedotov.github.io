@@ -1,0 +1,35 @@
+
+.ext-search-panel{
+    display: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.bread-crumbs{
+}
+
+.advanced-search{
+}
+
+.product-control{
+    padding-bottom: 10px;
+}
+
+.full-component{
+    width: 100%;
+}
+
+.product-description-holder span span{
+    font-weight: bold;
+}
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-pills {
+    text-align:center;
+}

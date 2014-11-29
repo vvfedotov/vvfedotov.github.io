@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auction Homepage</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-slider.min.css" >
+    <link rel="stylesheet" href="assets/css/extView.css">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="javascript:void(0);">ABC Auction</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form navbar-left navbar-input-group" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter product name">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-question-sign"></span> Help</a>
+                </li>
+                <li><a href="javascript:void(0);"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping
+                    cart</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- / Navbar -->
+
+<div class="container">
+
+    <div class="row">
+        <!-- Featured Products -->
+
+        <div id="featured-product-carousel" class="carousel slide" data-pause="hover" data-wrap="true"
+             data-interval="3000">
+            <ol class="carousel-indicators">
+                <li data-target="#featured-product-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#featured-product-carousel" data-slide-to="1" class=""></li>
+                <li data-target="#featured-product-carousel" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="assets/img/promo-product-1.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
+                </div>
+                <div class="item">
+                    <img src="assets/img/promo-product-2.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
+                </div>
+                <div class="item">
+                    <img src="assets/img/promo-product-3.jpg" alt="ABC Auction Deals" class="img-responsive center-block">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#featured-product-carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#featured-product-carousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+
+
+        <!-- Navigation on site map "BreadCrumbs" -->
+        <div class="ext-search-panel">
+            <div class="row bread-crumbs">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Search Results</a></li>
+                </ol>
+            </div>
+
+            <!-- advanced search panel -->
+            <div class="row advanced-search">
+                <form role="form" class="ext-search">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <label>Product</label>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 product-control">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 product-control">
+                                    <select class="form-control dropdown-category">
+                                        <option>Category</option>
+                                        <script id="data-category-template" type="text/x-handlebars-template">
+                                            {{#each this}}
+                                                <option>{{title}}</option>
+                                            {{/each}}
+                                        </script>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <label>Current Prise</label>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="input-group  product-control">
+                                        <span class="input-group-addon">$</span>
+                                        <input type="text" class="form-control money-from" value="2500" >
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">$</span>
+                                        <input type="text" class="form-control money-to" value="5500" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+
+                            </div>
+                            <div>
+                                <input type="text" class="slider"/>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+                            <label>Max Auction Close Date</label>
+
+
+                            <div class='input-group date datepicker product-control'>
+                                <input type='text' class="form-control" data-date-format="YYYY/MM/DD"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+
+                            <div></div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <label>Number of Bids</label>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 product-control">
+                                    <input type="text" value="" class="form-control spinner" style="text-align: center">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12  col-md-12 col-lg-12">
+                            <button type="button" class="btn btn-default center-block">Find Now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- / Featured Products -->
+    </div>
+    <br/><hr><br/>
+    <div class="row">
+        <!-- Featured Products list with thumbnails and description  -->
+        <ul class="list-unstyled" id="items">
+            <script id="data-home-template" type="text/x-handlebars-template">
+                {{#each this}}
+                    <div class="data-home-template">
+                        <li class="col-sm-4">
+                            <div class="col-md-4">
+                                <a href="javascript:void(0)"><img src="{{thumb}}" alt="" class="img-responsive"></a>
+                            </div>
+
+                            <div class="product-description-holder col-md-8">
+                                <h2><a href="javascript:void(0)">{{title}}</a></h2>
+
+                                <p>
+                                    <b>Item's description:</b> {{description}}
+                                </p>
+                            </div>
+                        </li>
+                    </div>
+                {{/each}}
+            </script>
+
+            <script id="data-search-template" type="text/x-handlebars-template">
+                {{#each this}}
+                    <div class="data-search-template">
+                        <li class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <a href="javascript:void(0)"><img src="{{thumb}}" alt="" class="img-responsive"></a>
+                                        </div>
+
+                                        <div class="product-description-holder col-md-8 col-sm-8 col-xs-8">
+                                            <h2><a href="javascript:void(0)">{{title}}</a></h2>
+                                            <span>
+                                                <span>Item's description:</span> {{description}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="row text-center">
+                                            <div class="col-md-12 col-sm-12 col-xs-6">
+                                                <span class=""><strong>{{timeleft}}h left</strong></span>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-6 text-center">
+                                                <span class="current-time"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="row text-center">
+                                            <div class="col-md-12 col-sm-12 col-xs-6">
+                                                <span>
+                                                    <span class="glyphicon glyphicon-eye-open" style="width: 25px; height: 16px;"/>
+                                                    <strong> {{watchers}}</strong>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-6">
+                                                <span>Watchers</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="row text-center">
+                                            <div class="col-md-12 col-sm-12 col-xs-6">
+                                                <span><strong>{{price}}$</strong></span>
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 col-xs-6">
+                                                <span>Current price</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                {{/each}}
+            </script>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <br/>
+        <ul class="nav nav-pills">
+            <li role="presentation" class="footer-home disabled">
+                <a href="javascript:void(0)">Home</a>
+            </li>
+            <li role="presentation" class="footer-search">
+                <a href="javascript:void(0)">Search</a>
+            </li>
+            <li role="presentation" class="footer-about">
+                <a href="javascript:void(0)">About Us</a>
+            </li>
+            <li role="presentation" class="footer-service">
+                <a href="javascript:void(0)">Terms of Service</a>
+            </li>
+
+
+        </ul>
+        <br/><br/>
+    </footer>
+    <!-- / Footer -->
+
+</div>
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/jquery-2.1.0.min.js"></script>
+<script src="assets/js/jquery.number.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-slider.min.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="assets/js/jquery.bootstrap-touchspin.min.js"></script>
+<script src="assets/js/handlebars-v2.0.0.js"></script>
+<script src="assets/js/home.search.js"></script>
+</body>
+</html>
