@@ -41,12 +41,12 @@ function showData(jsonFile, viewTemplate, page){
 
 $(".money-to").number( true, 0 );
 $(".money-from").number( true, 0 );
-$(".money-to").change(function () {
-    changeSliderValue();
-});
 
-$(".money-from").change(function () {
-    changeSliderValue();
+$(".money-to").bind('change blur', function (e) {
+        changeSliderValue();
+});
+$(".money-from").bind('change blur', function (e) {
+        changeSliderValue();
 });
 
 $('.datepicker').datetimepicker({
@@ -74,11 +74,11 @@ $(".spinner").TouchSpin({
 function changeSliderValue(){
     var values = [];
     if($(".money-to").val() > $(".money-from").val()){
-        values[0] = $(".money-from").val();
-        values[1] = $(".money-to").val();
+        values[0] = $(".money-from").val() * 1;
+        values[1] = $(".money-to").val() * 1;
     }else{
-        values[1] = $(".money-from").val();
-        values[0] = $(".money-to").val();
+        values[1] = $(".money-from").val() * 1;
+        values[0] = $(".money-to").val() * 1;
     }
     $(".slider").slider('setValue', values);
     $(".money-from").val(values[0]);
